@@ -1,0 +1,28 @@
+Give an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i
+
+I.e if our input was [1,2,3,4,5] , the expected output would be [120,60,40,30,24]. If our inputnwas [3,2,1] , the expected output would be [2,3,6]
+
+CODE SOLUTION
+
+a=list(map(int,input().split()))
+k=[]
+for i in range(0,len(a)):
+    pro=1
+    for j in range(0,len(a)):
+        if i!=j:
+            pro=pro*a[j]
+    k.append(pro)
+print(k)
+
+a=list(map(int,input().split()))
+b=len(a)
+k=[]
+for i in range(b):
+    pro=1
+    for j in range(b):
+        if i==j:
+            continue
+        else:
+            pro=pro*a[j]
+    k.append(pro)
+print(k)
