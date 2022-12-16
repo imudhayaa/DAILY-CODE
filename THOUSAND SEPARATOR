@@ -1,0 +1,36 @@
+
+Write a function  named format_number that takes a non-negative number as its only parameter
+
+Your function should convert the number to a string and add commas as a thousands separator
+
+For eg:
+Calling format_number(1000000) should return “1,000,000”
+
+CODE SOLUTION:
+
+n = int(input())
+print( f"{n:,d}")
+
+def format_number(n):
+    return f"{n:,d}"
+n = int(input())
+print(format_number(n))
+
+
+def format_number(n):
+    print('{:,}'.format(n))
+n = int(input())
+format_number(n)
+
+n=int(input())
+n=str(n)
+n=n[::-1]
+def format_number(n):
+    s=" "
+    for i in range(0,len(n),3):
+        if i+3 < len(n):
+            s+=n[i:i+3]+","
+        else:s+=n[i:]
+    print('"',s[::-1],'"',sep=" ")
+format_number(n)
+
