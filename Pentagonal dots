@@ -1,0 +1,42 @@
+Write a function that takes a positive integer num and calculates how many dots exist in a pentagonal shape around the center dot on the Nth iteration
+
+Return the number of dots that exist in the whole pentagon on the Nth iteration
+
+Eg: pentagonal(1)-1,2-6 , 3-16,4-31
+
+CODE:
+
+n=int(input())
+sum=1
+if(n==1):
+    print(1)
+else:
+    for i in range(1,n):
+        sum=sum+(i*5)
+    print(sum)
+
+CODE IN C
+
+#include<stdio.h>
+int main()
+{
+    int n,dot=1;
+    scanf("%d",&n);
+    for(int i=1;i<n;i++)
+    {
+        dot=dot+(i*5);
+    }
+    printf("%d",dot);
+}
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,t;
+    scanf("%d",&n);
+    n=n-1;
+    t=1+5*(n*(n+1)/2);
+    printf("%d",t);
+}
