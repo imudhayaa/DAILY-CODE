@@ -1,0 +1,20 @@
+Given a list of integers , write a function that returns the largest sum of non-adjacent numbers Numbers can be 0 or negative
+
+For example , [2,4,6,2,5] should return 13 since we pick 2,6and5 ; [5,1,1,5] should return 10 since we pick 5 and 5
+CODE:
+
+a=list(map(int,input().split()))
+if len(a)==0:
+    print(0)
+elif len(a)==1:
+    print(a[0])
+else:
+    maxsum=a[:2]
+maxsum[1]=max(maxsum[0],maxsum[1])
+
+for i in range(2,len(a)):
+    cursum=max(maxsum[1],maxsum[0]+a[i])
+    maxsum[0]=maxsum[1]
+    maxsum[1]=cursum
+
+print(maxsum[1])
